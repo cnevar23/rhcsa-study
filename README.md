@@ -1,7 +1,7 @@
 # rhcsa-study
 Documenting my hands-on Linux journey for RHCSA.
 
-# RHCSA Study Journey: Day 1–3
+# RHCSA Study Journey: Day 1
 
 Documenting my hands-on Linux journey as I prepare for the RHCSA (Red Hat Certified System Administrator) exam.
 
