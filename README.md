@@ -28,6 +28,7 @@ command --help           # Quick help for a command
 
 Permissions and Ownership
 
+```bash
 chmod 755 file           # Set permissions (numeric)
 chmod u+x file           # Add execute for user
 chmod o-w file           # Remove write for others
@@ -37,6 +38,7 @@ chown user:group file    # Change file owner and group
 
 User Management
 
+```bash
 whoami                   # Show current user
 id                       # Show UID, GID, group memberships
 id username              # Show info for specific user
