@@ -1,17 +1,9 @@
-# rhcsa-study
-Documenting my hands-on Linux journey for RHCSA.
-
-# RHCSA Study Journey: Day 1
+# RHCSA Study Journey: Day 1–3
 
 Documenting my hands-on Linux journey as I prepare for the RHCSA (Red Hat Certified System Administrator) exam.
 
----
+Day 1: Navigation & File Management, Permissions & Ownership and User Management
 
-## Day 1
-
-Navigation & File Management
-
-```bash
 pwd                      # Print current directory
 cd /path                 # Change directory
 ls, ls -l, ls -a         # List files (long format, all files)
@@ -26,18 +18,12 @@ rm -rf dir/              # Remove directory + contents (recursive)
 man command              # View manual page
 command --help           # Quick help for a command
 
-Permissions and Ownership
-
-
 chmod 755 file           # Set permissions (numeric)
 chmod u+x file           # Add execute for user
 chmod o-w file           # Remove write for others
 chmod a-x file           # Remove execute for all
 chmod u=rwx,go= file     # User gets full, group/others none
 chown user:group file    # Change file owner and group
-
-User Management
-
 
 whoami                   # Show current user
 id                       # Show UID, GID, group memberships
