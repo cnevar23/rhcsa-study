@@ -1,0 +1,120 @@
+RHCSA Study Journey: Week 2
+
+Going through the basic commad syntax for Linux this week
+
+ls  #will display a listing of information about files
+
+Note: Linux is case sensitve and inputting LS would give you permission denied if the path does not exist
+
+ls Documents  #Documents is a direcetory and in this Linux command ls is being give the argument of Documents which should return an output list of files contained withing the Documents directory.
+
+ls -l #tThe -l is an option that gives the ls more information on the each of the files listed
+
+ls -r #The -r will print the results in reverse alphabetical order
+
+ls -l -r #Returns a long (detailed) listing with the order reversed
+
+pwd #Is the printing working directory
+
+cd Documents #Puts you in the Documents directory as show below
+sysadmin@localhost:~/Documents$ 
+
+~/Documents/$ cd School/Art #Puts you in the Art directory as shown below
+sysadmin@localhost:~/Documents/School/Art$
+
+~/Documents/School/Art$ pwd #Will confirm the change into the Art directory
+
+~/Documents/School/Art$ cd .. #Will move you to the School directory
+
+~/Documents/School$ cd ~ #The ~ will take you to the user's home directory
+
+ls -l /var/log/
+total 844                                                                       
+-rw-r--r-- 1 root   root  18047 Dec 20  2017 alternatives.log                   
+drwxr-x--- 2 root   adm    4096 Dec 20  2017 apache2                            
+drwxr-xr-x 1 root   root   4096 Dec 20  2017 apt                                
+-rw-r----- 1 syslog adm    1346 Oct  2 22:17 auth.log                           
+-rw-r--r-- 1 root   root  47816 Dec  7  2017 bootstrap.log                      
+-rw-rw---- 1 root   utmp      0 Dec  7  2017 btmp                               
+-rw-r----- 1 syslog adm     547 Oct  2 22:17 cron.log                           
+-rw-r----- 1 root   adm   85083 Dec 20  2017 dmesg                              
+-rw-r--r-- 1 root   root 325238 Dec 20  2017 dpkg.log                           
+-rw-r--r-- 1 root   root  32064 Dec 20  2017 faillog                            
+drwxr-xr-x 2 root   root   4096 Dec  7  2017 fsck                               
+-rw-r----- 1 syslog adm     106 Oct  2 19:57 kern.log                           
+-rw-rw-r-- 1 root   utmp 292584 Oct  2 19:57 lastlog                            
+-rw-r----- 1 syslog adm   19573 Oct  2 22:57 syslog                             
+drwxr-xr-x 2 root   root   4096 Apr 11  2014 upstart                            
+-rw-rw-r-- 1 root   utmp    384 Oct  2 19:57 wtmp 
+
+
+Symbol	File Type	Description
+d	directory	A file used to store other files.
+-	regular file	Includes readable files, images files, binary files, and compressed files.
+l	symbolic link	Points to another file.
+s	socket	Allows for communication between processes.
+p	pipe	Allows for communication between processes.
+b	block file	Used to communicate with hardware.
+c	character file	Used to communicate with hardware.
+
+ls -lt /var/log  #Will sort the files by timestamp (t)
+ls -l -S /var/log #Will sort the files by size (S)
+ls -lSr /var/log #Will reverse the order of any sort (r)
+
+
+su - #Allows you to temporarily act a different user
+sudo #Allows you to execute a command as another user without create a new shell
+
+Permissions
+sysadmin@localhost:~/Documents$ ls -l hello.sh                                  
+-rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh 
+#The first - tells us that this is a regular file
+#The following rw- tells us the permission for the owner of the file which we can also see by the user owner field sysadmin
+#The following r-- is set for the group who owns the file
+#The following r-- is for everyone else that is not the owner or in the group
+r  #allows for files to be read or copied
+w  #Allows for contents to be modified or overwritten. Allows for files to be added or moved from a directory as well
+x  #Allows for a file to be run as process although script files require read permission as well
+
+Changing File Permissions
+chmod #Is used to change the permissions of a file or directory
+
+sysadmin@localhost:~/Documents$ ls -l hello.sh                                  
+-rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh   
+
+#Below is the syntax to change permissions for either owner, group, others or all users
+SET
+u  #Is for the user who owns the file
+g  #Is for the group who owns the file
+o  #Is for the others not the owner or member of the group owner
+a  #Refers to the user, group and others
+ACTION
++  #Add the permission, if necessary
+=  #Specifies the exact permission
+-  #Removes the permission, if necessary
+PERMISSIONS
+r  #read
+w  #write
+x  #execute 
+
+chmod [<SET><ACTION><PERMISSIONS>] FILE NAME
+
+Changing File Ownership
+sudo chown root hello.sh #Will change the owner from sysadmin to root
+
+cat #Will display the entire contents of a file
+head #Will display top of the file
+tail #Will display the bottom of the file
+head -n 5 alpha.txt  #Will display the first five lines of the text
+tail -n 5 alpha.txt  #Will display the last five lines of the text
+
+
+~/Documents$ mv people.csv Work  #Will move people.csv to Work
+~/Documents$ mv numbers.txt letters.txt alpha.txt School #Moving all the files from Documents to School directory
+
+Removing files
+~/Documents$ rm linux.txt
+
+ipconfig #Displays the network configuration
+apt-get upgrade #Will updated all packages
+apt-get purge #Will delete all of a package's file
