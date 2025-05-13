@@ -1,4 +1,4 @@
-# RHCSA Study Journey: Day 1
+# RHCSA Study Journey: Week 1
 
 Documenting my hands-on Linux journey as I prepare for the RHCSA (Red Hat Certified System Administrator) exam.
 
